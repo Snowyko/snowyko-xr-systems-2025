@@ -34,7 +34,7 @@ public class HandPhysics : MonoBehaviour
         //Position
         var positionWithOffset = _followTarget.position + positionOffset;
         var distance = Vector3.Distance(_followTarget.position, transform.position);
-        _body.angularVelocity = (_followTarget.position - transform.position).normalized * (followSpeed * distance);
+        _body.linearVelocity = (_followTarget.position - transform.position).normalized * (followSpeed * distance);
 
         //Rotation
         var rotationWithOffset = _followTarget.rotation * Quaternion.Euler(rotationOffset);
